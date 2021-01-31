@@ -22,4 +22,10 @@ class TopicsController < ApplicationController
   def topic_params
     params.require(:topic).permit(:image, :description)
   end
+  
+  def show
+    @topic = Topic.find_by(id.params[:id])
+    @user = @topic.user
+    @favorites_count = favorite.where(topic_id: @topic_id).count
+  end  
 end
