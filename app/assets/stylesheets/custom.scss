@@ -142,7 +142,7 @@ h1, h2 {
       width: 35px;
       height: 30px;
       margin-left: 20px;
-      color: #FF0000;
+      filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(290deg) brightness(95%) contrast(112%);
     }
   }
 }

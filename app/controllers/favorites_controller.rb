@@ -14,4 +14,9 @@ class FavoritesController < ApplicationController
       redirect_to topics_path, danger: 'お気に入りに登録に失敗しました'
     end
   end
+  
+  def destroy
+    flash[:success] = "お気に入りを取り消しました"
+    redirect_to topics_path
+  end
 end
