@@ -22,11 +22,18 @@
             <%# いいね数のカウント表示 %>
             <%= topic.favorite_users.count %>
               
-            
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
-            <p class="topic-text">
+            <%= link_to comments_path(topic_id: topic.id) do %>
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+             <% end %>
+          <p class="topic-text">
               <%= topic.description %>
-            </p>
+          </p>
+          <h3>コメント</h3>
+          <% topic.comments.each do |comment| %>
+              <p class="topic-text">
+                <%= comment.content %>
+              </p>
+          <% end %>
           </div>
         </div>
       </div>
